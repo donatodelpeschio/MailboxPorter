@@ -1,65 +1,48 @@
-FROM php:8.3-fpm-bullseye
+FROM php:8.2-apache
 
-# 1. Installazione delle dipendenze Perl (Aggiunto libio-tee-perl)
+# 1. Installiamo tutte le librerie Perl necessarie dal repository Debian
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
-    procps \
-    iproute2 \
     makepasswd \
     libauthen-ntlm-perl \
-    libclass-singleton-perl \
+    libcgi-pm-perl \
     libcrypt-openssl-rsa-perl \
     libdata-uniqid-perl \
-    libdigest-hmac-perl \
-    libdist-checkconflicts-perl \
     libencode-imaputf7-perl \
     libfile-copy-recursive-perl \
     libfile-tail-perl \
-    libio-socket-inet6-perl \
     libio-socket-ssl-perl \
     libio-tee-perl \
     libjson-webtoken-perl \
     libmail-imapclient-perl \
-    libmodule-scandeps-perl \
-    libnet-dbus-perl \
-    libnet-ssleay-perl \
     libparse-recdescent-perl \
-    libproc-processtable-perl \
+    libmodule-scandeps-perl \
+    libpar-packer-perl \
     libreadonly-perl \
-    libregexp-common-perl \
     libsys-meminfo-perl \
+    libsys-hostname-long-perl \
+    libregexp-common-perl \
+    libproc-processtable-perl \
     libterm-readkey-perl \
-    libtest-fatal-perl \
     libtest-mockobject-perl \
     libtest-pod-perl \
-    libtest-requires-perl \
-    libtest-simple-perl \
-    libtest-warn-perl \
-    libtime-hires-perl \
     libunicode-string-perl \
     liburi-perl \
     libwww-perl \
-    nginx \
     && rm -rf /var/lib/apt/lists/*
 
-# 2. Scaricamento e installazione manuale di imapsync
+# 2. Installiamo imapsync e forziamo i permessi
 RUN wget https://imapsync.lamiral.info/imapsync \
     && cp imapsync /usr/bin/imapsync \
     && chmod +x /usr/bin/imapsync
 
+# 3. Configurazione Apache: puntiamo alla cartella 'public'
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# 4. Abilitiamo mod_rewrite e settiamo i permessi per i log
+RUN a2enmod rewrite && chmod 777 /tmp
+
 WORKDIR /var/www/html
-
-COPY . .
-
-# Creazione cartella log e permessi
-RUN mkdir -p logs && chown -R www-data:www-data /var/www/html && chmod -R 775 logs
-
-EXPOSE 80
-
-RUN rm /etc/nginx/sites-enabled/default || true
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-
-RUN chmod 1777 /tmp
-
-CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]

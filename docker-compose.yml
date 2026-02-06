@@ -1,15 +1,17 @@
 services:
-  app:
+  mailbox_porter:
     build: .
     container_name: mailbox_porter
+    restart: unless-stopped
     ports:
       - "8080:80"
     volumes:
-      - .:/var/www/html
+      # Mappa la cartella src locale in quella del container
+      - ./src:/var/www/html
+      # Volume per i log delle migrazioni (Resume)
+      - migration_logs:/tmp
     environment:
       - APP_ENV=local
-    restart: unless-stopped
 
-networks:
-  default:
-    name: mailboxporter-network
+volumes:
+  migration_logs:
