@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: mailbox_porter
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=local
+    restart: unless-stopped
+
+networks:
+  default:
+    name: mailboxporter-network

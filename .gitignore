@@ -1,0 +1,19 @@
+# Docker & OS
+.DS_Store
+.docker/
+.env
+
+# PHP & Composer
+/vendor/
+composer.lock
+.phpunit.result.cache
+
+# Frontend
+/node_modules/
+/public/storage/
+/public/hot/
+/public/css/app.css
+/public/js/app.js
+
+# App logs
+/storage/*.log
