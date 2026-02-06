@@ -9,6 +9,9 @@ MailboxPorter nasce dalla necessità di rendere la migrazione delle email un pro
 - ⚡ **Real-time Feedback**: Monitora il progresso della sincronizzazione live.
 - 🔒 **Sicuro**: Tutto gira localmente sul tuo server o PC.
 
+![MailboxPorter Dashboard](assets/screenshot.jpg)
+![MailboxPorter Advanced Filters](assets/screenshot2.jpg)
+
 ## 🛠️ Installazione Rapida
 
 Assicurati di avere [Docker](https://www.docker.com/) installato, quindi clona il repository:
@@ -36,6 +39,6 @@ L'applicazione sarà disponibile su: http://localhost:8080
 Le pull request sono benvenute! Per modifiche importanti, apri prima un'issue per discutere cosa vorresti cambiare.
 
 ☕ Supporta il progetto
-Se questo tool ti ha risparmiato ore di lavoro migrando caselle email, offrimi un caffè!
+Se questo tool ti ha risparmiato ore di lavoro migrando caselle email, [offrimi un caffè](https://paypal.me/mailboxporter)!
 
 Prodotto con ❤️ da Donato Del Peschio
