@@ -17,7 +17,7 @@ MailboxPorter nasce dalla necessità di rendere la migrazione delle email un pro
 Assicurati di avere [Docker](https://www.docker.com/) installato, quindi clona il repository:
 
 ```bash
-git clone [https://github.com/donatodelpeschio/MailboxPorter.git](https://github.com/donatodelpeschio/MailboxPorter.git)
+git clone https://github.com/donatodelpeschio/MailboxPorter.git
 cd MailboxPorter
 docker-compose up -d
 ```
