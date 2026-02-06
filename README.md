@@ -10,7 +10,7 @@ MailboxPorter nasce dalla necessità di rendere la migrazione delle email un pro
 - 🔒 **Sicuro**: Tutto gira localmente sul tuo server o PC.
 
 ![MailboxPorter Dashboard](assets/screenshot.jpg)
-![MailboxPorter Advanced Filters](assets/screenshot2.jpg)
+
 
 ## 🛠️ Installazione Rapida
 
@@ -42,3 +42,6 @@ Le pull request sono benvenute! Per modifiche importanti, apri prima un'issue pe
 Se questo tool ti ha risparmiato ore di lavoro migrando caselle email, [offrimi un caffè](https://paypal.me/mailboxporter)!
 
 Prodotto con ❤️ da Donato Del Peschio
+
+
+![MailboxPorter Advanced Filters](assets/screenshot2.jpg)
