@@ -1,5 +1,13 @@
 # 🧳 MailboxPorter
 **The modern, simple, and Dockerized GUI for imapsync.**
+
+
+
+  <img src="/assets/badge/badge.svg" />
+  <a href="https://paypal.me/mailboxporter"><img src="/assets/badge/Donate-PayPal-green.svg" /></a>
+	<br>
+	<br>
+
 ___
 MailboxPorter nasce dalla necessità di rendere la migrazione delle email un processo visivo, intuitivo e privo di stress. Sfrutta la potenza di `imapsync` con un'interfaccia web moderna basata su PHP 8.3 e Tailwind CSS.
 
