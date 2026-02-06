@@ -1,6 +1,6 @@
 # 🧳 MailboxPorter
 **The modern, simple, and Dockerized GUI for imapsync.**
-
+___
 MailboxPorter nasce dalla necessità di rendere la migrazione delle email un processo visivo, intuitivo e privo di stress. Sfrutta la potenza di `imapsync` con un'interfaccia web moderna basata su PHP 8.3 e Tailwind CSS.
 
 ## 🚀 Caratteristiche
@@ -35,9 +35,12 @@ L'applicazione sarà disponibile su: http://localhost:8080
 ![Version](https://img.shields.io/badge/version-1.0.0-emerald)
 ![Engine](https://img.shields.io/badge/engine-imapsync-orange)
 
+___
+
 🤝 Contribuire
 Le pull request sono benvenute! Per modifiche importanti, apri prima un'issue per discutere cosa vorresti cambiare.
 
+___
 ☕ Supporta il progetto
 Se questo tool ti ha risparmiato ore di lavoro migrando caselle email, [offrimi un caffè](https://paypal.me/mailboxporter)!
 
@@ -45,3 +48,5 @@ Prodotto con ❤️ da Donato Del Peschio
 
 
 ![MailboxPorter Advanced Filters](assets/screenshot2.jpg)
+
+___
